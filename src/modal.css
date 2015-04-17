@@ -1,0 +1,86 @@
+
+.body-modal {
+  position: fixed;
+  z-index: 110;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  line-height: 1.6em;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #383838;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+.body-modal > .box {
+  width: 600px;
+  margin: 100px auto 40px;
+  background-color: white;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.body-modal > .box > .title {
+  padding: 17px 20px;
+  border-bottom: 1px solid #e6e6e6;
+  text-align: center;
+}
+.body-modal > .box > .title > .name {
+  font-size: 18px;
+  color: #383838;
+}
+.body-modal > .box > .title > .icon-remove {
+  float: right;
+  font-size: 14px;
+  color: #808080;
+  cursor: pointer;
+  -webkit-transition: color 218ms;
+  -o-transition: color 218ms;
+  transition: color 218ms;
+}
+.body-modal > .box > .title > .icon-remove:hover {
+  color: #03a9f4;
+}
+.body-modal > .icon-remove {
+  position: fixed;
+  top: 36px;
+  right: 36px;
+  font-size: 22px;
+  -webkit-font-smoothing: antialiased;
+  color: #e6e6e6;
+}
+.body-modal > .icon-remove:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+}
+.body-modal.fade-enter .box {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+  transform: scale(0.9);
+}
+.body-modal.fade-enter-active > .box {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 200ms ease-in-out;
+  -moz-transition: -moz-transform 200ms ease-in-out;
+  -o-transition: -o-transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out;
+}
+.body-modal.fade-leave > .box {
+  -webkit-transition: all 150ms ease-in-out;
+  -o-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+.body-modal.fade-leave-active > .box {
+  opacity: 0.01;
+  filter: alpha(opacity=1);
+  -webkit-transform: translate(0, -120px);
+  -ms-transform: translate(0, -120px);
+  -o-transform: translate(0, -120px);
+  transform: translate(0, -120px);
+}
