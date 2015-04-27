@@ -55,7 +55,9 @@ propTypes:
   # this component accepts children
   show: T.bool.isRequired
   name: T.string
-````
+```
+
+> Notice: click content to close overlay, not the black area.
 
 ### Supposition
 

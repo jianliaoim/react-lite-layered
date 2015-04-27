@@ -1,8 +1,8 @@
 {
-  "name": "react-lite-dropdown",
+  "name": "react-lite-layered",
   "version": "0.0.2",
   "description": "Dropdown menu from Talk by teambition",
-  "main": "lib/dropdown.js",
+  "main": "lib/index.js",
   "dependencies": {
     "bowser": "^0.7.2",
     "classnames": "^1.2.0",
