@@ -3,9 +3,13 @@ import {default as React} from 'react';
 
 import {Popover as Popover} from './index';
 import {Modal as Modal} from './index';
+import {Overlay as Overlay} from './index';
 
 import './modal.css';
 import './popover.css';
+import './overlay.css';
+import './fade.css';
+import './demo.css';
 
 var App = React.createClass({
   displayName: 'page-app',
@@ -13,7 +17,8 @@ var App = React.createClass({
   getInitialState: function () {
     return {
       showModal: false,
-      showPopover: false
+      showPopover: false,
+      showOverlay: false
     };
   },
 
@@ -46,11 +51,19 @@ var App = React.createClass({
     this.setState({showPopover: false})
   },
 
+  onOverlayToggle: function() {
+    this.setState({showOverlay: !this.state.showOverlay})
+  },
+
+  onOverlayClose: function() {
+    this.setState({showOverlay: false})
+  },
+
   renderModal: function() {
     return <Modal
       name="page-app" title="demo of Modal"
       onCloseClick={this.onModalHide} showClose={true} show={this.state.showModal}>
-      <div>Content of Modal, style this for yor self.</div>
+      <div>{"Content of Modal, style this for yor self."}</div>
     </Modal>
   },
 
@@ -65,12 +78,20 @@ var App = React.createClass({
     </Popover>
   },
 
+  renderOverlay: function() {
+    return <Overlay name="page-app" show={this.state.showOverlay}>
+      <div className="content" onClick={this.onOverlayClose}>{"Content in Overlay"}</div>
+    </Overlay>
+  },
+
   render: function() {
     return <div className="page-app">
         <button onClick={this.onModalShow}>Show Modal</button>
         <button ref="area" onClick={this.onPopoverToggle}>Show Popover</button>
+        <button onClick={this.onOverlayToggle}>Show Overlay</button>
         {this.renderModal()}
         {this.renderPopover()}
+        {this.renderOverlay()}
     </div>
   }
 });

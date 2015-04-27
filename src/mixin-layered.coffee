@@ -40,7 +40,7 @@ module.exports =
     # more delay to fix in safari
     setTimeout =>
       @_renderChildren()
-    , (if bowser.safari then 20 else 0)
+    , 100
 
   _renderChildren: ->
     tree = @renderLayer true
