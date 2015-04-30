@@ -14,7 +14,7 @@ T = React.PropTypes
 cx = require 'classnames'
 
 module.exports = React.createClass
-  displayName: 'body-modal'
+  displayName: 'lite-modal'
   mixins: [mixinLayered]
 
   propTypes:
@@ -44,18 +44,18 @@ module.exports = React.createClass
         @onCloseClick()
 
   renderLayer: (afterTransition) ->
-    className = "body-modal is-for-#{@props.name}"
+    className = "lite-modal is-for-#{@props.name}"
+
     Transition transitionName: 'fade', enterTimeout: 200, leaveTimeout: 350,
       if @props.show and afterTransition
         div className: className, onClick: @onBackdropClick,
-          if @props.showCornerClose
-            a className: 'icon icon-remove', onClick: @onCloseClick
-          div className: 'box',
-            if @props.title?
-              div className: 'title',
-                span className: 'name', @props.title
-                span className: 'icon icon-remove', onClick: @onCloseClick
-            @props.children
+          div className: 'wrapper', onClick: @onBackdropClick,
+            div className: 'box',
+              if @props.title?
+                div className: 'title',
+                  span className: 'name', @props.title
+                  span className: 'icon icon-remove', onClick: @onCloseClick
+              @props.children
 
   render: ->
     div()

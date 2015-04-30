@@ -1,22 +1,21 @@
 
-React Lite Modal and Popover
+React Lite Modal, Popover, Overlay
 ----
 
-Modal and Popover component from Talk by Teambition.
+Modal, Popover, Overlay components from Talk by Teambition.
 
 Demo http://teambition.github.io/react-lite-layered/
 
-Components in this repo are based on the idea described at:
-http://stackoverflow.com/a/26789089/883571
+Inspired by http://stackoverflow.com/a/26789089/883571
 
 ### Properties
 
-This module contains 3 layered components. There are some common properties:
+This module contains 3 layered components. There are some **common properties**:
 
 * `show`(`bool.isRequired`) controls visibility
 * `name`(`string`, defaults to `default`), CSS hook `"is-for-#{name}"`
 
-#### Modal
+##### Modal
 
 ```coffee
 T = React.PropTypes
@@ -30,7 +29,7 @@ propTypes:
   show:             T.bool.isRequired
 ```
 
-#### Popover
+##### Popover
 
 ```coffee
 propTypes:
@@ -48,7 +47,7 @@ propTypes:
 
 * `positionAlgorithm`(`func`, optional) if given, takes in `baseArea` and returns CSS styles
 
-#### Overlay
+##### Overlay
 
 ```coffee
 propTypes:
@@ -59,12 +58,17 @@ propTypes:
 
 > Notice: click content to close overlay, not the black area.
 
+##### Transition
+
+Transition component with timeout.
+Read more at: https://github.com/facebook/react/issues/1326
+
 ### Supposition
 
 These modules contains bussiness logics of Teambition.
 I will suggest copy code and make create you own.
 
-And the `layered` mixin is tricky. I hope it fixed in the future.
+And the `layered` mixin is tricky. I hope it improved in the future.
 
 ### Usage
 
@@ -72,7 +76,7 @@ And the `layered` mixin is tricky. I hope it fixed in the future.
 npm i --save react-lite-layered
 ```
 
-Read [src/main.jsx](main) for details:
+Read [src/main.jsx](main)(compiles with Babel) for details:
 
 [main]: https://github.com/teambition/react-lite-layered/blob/gh-pages/src/main.jsx
 

@@ -1,5 +1,34 @@
 
+body {
+  padding: 100px 100px 300px 100px;
+  font-family: Palatino, Optima, Georgia, serif;
+  font-size: 16px;
+  line-height: 1.6em;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 20px 0;
+}
+
 .content {
   padding: 10px;
   background-color: white;
+}
+
+.demo {
+  margin: 40px 0;
+}
+
+.button {
+  width: 160px;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #ccf;
+  display: inline-block;
+  margin-right: 20px;
+  color: white;
 }

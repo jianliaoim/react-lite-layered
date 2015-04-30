@@ -20,14 +20,13 @@ var
       body null
         div
           object (:class :intro)
-          line ":This is a demo of Lite Dropdown."
-          line ":This is the default style used in Talk by Teambition."
-          line ":You need to add your own style in your projects."
+          div (object (:class :title)) ":demo of Lite Layered Components"
+          line ":Add your own style in your projects."
           div null
             span null ":Read more at "
             a
-              object (:href :http://github.com/teambition/react-lite-dropdown)
-              , :github.com/teambition/react-lite-dropdown
+              object (:href :http://github.com/teambition/react-lite-layered)
+              , :github.com/teambition/react-lite-layered
             span null :.
         div
           object (:class :demo)

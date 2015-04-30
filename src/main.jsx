@@ -64,6 +64,7 @@ var App = React.createClass({
       name="page-app" title="demo of Modal"
       onCloseClick={this.onModalHide} showClose={true} show={this.state.showModal}>
       <div>{"Content of Modal, style this for yor self."}</div>
+      <div>{"Better if you add some padding~"}</div>
     </Modal>
   },
 
@@ -72,23 +73,31 @@ var App = React.createClass({
       onPopoverClose={this.onPopoverClose}
       baseArea={this.getTriggerArea()}
       showClose={true}
-      title="title is optional"
+      title="Title is Optional"
       show={this.state.showPopover}>
-      <div>Some content of popover</div>
+      <div>
+        {'Some content of popover'}
+        <br/>
+        {'This can be a list'}
+        <br/>
+        {'Add padding as you want'}
+      </div>
     </Popover>
   },
 
   renderOverlay: function() {
     return <Overlay name="page-app" show={this.state.showOverlay}>
-      <div className="content" onClick={this.onOverlayClose}>{"Content in Overlay"}</div>
+      <div className="content" onClick={this.onOverlayClose}>
+        {"Content in Overlay. Click here to close."}
+      </div>
     </Overlay>
   },
 
   render: function() {
     return <div className="page-app">
-        <button onClick={this.onModalShow}>Show Modal</button>
-        <button ref="area" onClick={this.onPopoverToggle}>Show Popover</button>
-        <button onClick={this.onOverlayToggle}>Show Overlay</button>
+        <div className="button" onClick={this.onModalShow}>Show Modal</div>
+        <div className="button" ref="area" onClick={this.onPopoverToggle}>Show Popover</div>
+        <div className="button" onClick={this.onOverlayToggle}>Show Overlay</div>
         {this.renderModal()}
         {this.renderPopover()}
         {this.renderOverlay()}
