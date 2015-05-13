@@ -47,6 +47,7 @@ propTypes:
 
 * `positionAlgorithm`(`func`, optional) if given, takes in `baseArea` and returns CSS styles
 
+
 ##### Overlay
 
 ```coffee
