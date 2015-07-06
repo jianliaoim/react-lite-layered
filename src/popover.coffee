@@ -9,6 +9,36 @@ a    = React.createFactory 'a'
 
 T = React.PropTypes
 
+PopoverMenu = React.createFactory React.createClass
+  displayName: 'light-popover-menu'
+
+  propTypes:
+    # accepts children
+    onClose: T.func.isRequired
+    style: T.object.isRequired
+    decorator: T.string.isRequired
+
+  componentDidMount: ->
+    event = new MouseEvent 'click',
+      view: window
+      bubbles: true
+      cancelable: true
+    window.dispatchEvent event
+    window.addEventListener 'click', @onWindowClick
+
+  componentWillUnmount: ->
+    window.removeEventListener 'click', @onWindowClick
+
+  onWindowClick: ->
+    @props.onClose()
+
+  onClick: (event) ->
+    event.stopPropagation()
+
+  render: ->
+    div className: "light-popover #{@props.decorator}", style: @props.style, onClick: @onClick,
+      @props.children
+
 module.exports = React.createClass
   displayName: 'light-popover'
   mixins: [mixinLayered]
@@ -22,12 +52,6 @@ module.exports = React.createClass
     baseArea:           T.object.isRequired # top, right, down, left
     showClose:          T.bool.isRequired
     show:               T.bool.isRequired
-
-  bindWindowEvents: ->
-    window.addEventListener 'click', @onWindowClick
-
-  unbindWindowEvents: ->
-    window.removeEventListener 'click', @onWindowClick
 
   computePosition: ->
     if @props.positionAlgorithm?
@@ -49,20 +73,12 @@ module.exports = React.createClass
   onPopoverClose: ->
     @props.onPopoverClose()
 
-  onWindowClick: ->
-    # components are prerendered for handling animations
-    # but they should not trigger the event
-    if @props.show
-      @onPopoverClose()
-
-  onClick: (event) ->
-    event.stopPropagation()
-
   renderLayer: (afterTransition) ->
     decorator = "is-#{@props.name or 'default'}"
+    s = @computePosition()
     div null,
       if @props.show and afterTransition
-        div className: "light-popover #{decorator}", style: @computePosition(), onClick: @onClick,
+        PopoverMenu style: s, decorator: decorator, onClose: @onPopoverClose,
           if @props.title?
             div className: 'header',
               span className: 'title', @props.title
@@ -73,4 +89,3 @@ module.exports = React.createClass
 
   render: ->
     div()
-
