@@ -3,7 +3,7 @@
 # http://stackoverflow.com/a/26789089/883571
 
 React = require 'react'
-bowser = require 'bowser'
+# bowser = require 'bowser'
 
 module.exports =
 

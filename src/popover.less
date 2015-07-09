@@ -1,0 +1,77 @@
+@black: #000000;
+@light-black: lighten(black, 22%);  // #383838
+
+.lite-popover {
+    background: white;
+    position: fixed;
+    z-index: 230;
+    box-shadow: 0 7px 21px rgba(0,0,0,.1);
+    min-width: 240px;
+    line-height: 30px;
+    border-radius: 3px;
+}
+
+// header
+
+.lite-popover > .header {
+    text-align: center;
+    position: relative;
+    padding: 10px 0;
+    margin: 0 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, .07);
+    color: @light-black;
+}
+
+.lite-popover > .header .title {
+    font-size: 15px;
+}
+
+.lite-popover > .icon-remove {
+    position: absolute;
+    right: 19px;
+    top: 11px;
+}
+
+// body
+
+.lite-popover > .body {
+    color: #808080;
+    padding: 5px 0;
+}
+
+.lite-popover > .body .item {
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.lite-popover > .body .icon {
+    float: left;
+}
+
+.lite-popover > .body [class*="icon-char"] {
+    margin: 3px 0 0 -4px;
+}
+
+.lite-popover > .body .icon.is-big  {
+    margin-left: -4px;
+}
+
+.lite-popover  .line > .icon + * {
+    margin-left: 15px;
+}
+
+.lite-popover  .line > .icon-char + *,
+.lite-popover  .line > .icon.is-big + * {
+    margin-left: 10px;
+}
+
+.lite-popover > .body .item:hover {
+    background-color: #f7f7f7;
+}
+
+.lite-popover > .body.is-member-menu {
+
+    .contact-name .name {
+        max-width: 180px;
+    }
+}

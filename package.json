@@ -6,8 +6,10 @@
   "dependencies": {
     "bowser": "^0.7.2",
     "classnames": "^1.2.0",
+    "flex.less": "^1.1.0",
     "keycode": "^2.0.0",
-    "react": "^0.13.1"
+    "react": "^0.13.1",
+    "volubile-ui": "^0.0.4"
   },
   "devDependencies": {
     "babel-core": "^5.1.10",
@@ -19,9 +21,13 @@
     "del": "^1.1.1",
     "gulp": "^3.8.11",
     "gulp-coffee": "^2.3.1",
+    "less": "^2.5.1",
+    "less-loader": "^2.2.0",
+    "node-libs-browser": "^0.5.2",
     "run-sequence": "^1.0.2",
     "stir-template": "^0.1.4",
     "style-loader": "^0.10.2",
+    "url-loader": "^0.5.6",
     "webpack": "^1.8.4",
     "webpack-dev-server": "^1.8.0"
   },
