@@ -5,10 +5,10 @@ fs = require('fs')
 
 module.exports =
   entry:
-    main: [ './src/demo/main.jsx' ]
+    main: [ './src/demo/main' ]
   output:
     path: 'build/'
-    filename: '[name].[chunkhash].js'
+    filename: '[name].[chunkhash:8].js'
     publicPath: './build/'
   resolve: config.resolve
   module: config.module

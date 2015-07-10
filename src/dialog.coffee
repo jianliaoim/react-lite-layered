@@ -1,6 +1,3 @@
-###
-Dialog of react-lite-layered
-###
 
 React = require 'react'
 keycode = require 'keycode'
@@ -9,10 +6,10 @@ mixinLayered = require './mixin-layered'
 
 Transition = React.createFactory require './transition'
 
-div       = React.createFactory 'div'
-span      = React.createFactory 'span'
-a         = React.createFactory 'a'
-button    = React.createFactory 'button'
+div    = React.createFactory 'div'
+span   = React.createFactory 'span'
+a      = React.createFactory 'a'
+button = React.createFactory 'button'
 
 T = React.PropTypes
 cx = require 'classnames'
@@ -23,12 +20,15 @@ module.exports = React.createClass
 
   propTypes:
     # this components accepts children
-    name:             T.string
-    title:            T.string
-    flexible:         T.bool
-    onCloseClick:     T.func.isRequired
-    onConfirm:        T.func.isRequired
-    show:             T.bool.isRequired
+    name:         T.string
+    title:        T.string
+    flexible:     T.bool
+    getText:      T.func
+    cancel:       T.string
+    confirm:      T.string
+    show:         T.bool.isRequired
+    onCloseClick: T.func.isRequired
+    onConfirm:    T.func.isRequired
 
   bindWindowEvents: ->
     window.addEventListener 'keydown', @onWindowKeydown
@@ -54,9 +54,9 @@ module.exports = React.createClass
   renderActions: ->
     div className: 'actions line',
       button className: 'button is-link', onClick: @onCloseClick,
-        '取消'
+        if @props.getText? then @props.getText @props.cancel else @props.cancel
       button className: 'button is-danger', onClick: @onConfirmClick,
-        '确认'
+        if @props.getText? then @props.getText @props.confirm else @props.confirm
 
   renderLayer: (afterTransition) ->
     className = "lite-dialog is-for-#{@props.name}"

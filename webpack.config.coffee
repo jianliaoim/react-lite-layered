@@ -6,7 +6,7 @@ module.exports =
     main: [
       'webpack-dev-server/client?http://0.0.0.0:8080'
       'webpack/hot/dev-server'
-      './src/demo/main.jsx'
+      './src/demo/main'
     ]
   output:
     path: 'build/'

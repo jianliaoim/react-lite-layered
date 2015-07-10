@@ -69,6 +69,7 @@ var App = React.createClass({
   renderDialog: function() {
     return <Dialog
       name="page-app" title="demo of Dialog"
+      cancel="cancel" confirm="confirm"
       onCloseClick={this.onDialogClose} onConfirm={this.onDialogClose} show={this.state.showDialog}>
     </Dialog>
   },
