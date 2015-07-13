@@ -1,6 +1,6 @@
 {
   "name": "react-lite-layered",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Dropdown menu from Talk by teambition",
   "main": "lib/index.js",
   "dependencies": {
