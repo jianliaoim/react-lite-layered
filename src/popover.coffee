@@ -1,5 +1,5 @@
 
-React = require 'react'
+React = require 'react/addons'
 
 mixinLayered = require './mixin-layered'
 
@@ -10,7 +10,7 @@ a    = React.createFactory 'a'
 T = React.PropTypes
 
 PopoverMenu = React.createFactory React.createClass
-  displayName: 'light-popover-menu'
+  displayName: 'lite-popover-menu'
 
   propTypes:
     # accepts children
@@ -36,11 +36,11 @@ PopoverMenu = React.createFactory React.createClass
     event.stopPropagation()
 
   render: ->
-    div className: "light-popover #{@props.decorator}", style: @props.style, onClick: @onClick,
+    div className: "lite-popover #{@props.decorator}", style: @props.style, onClick: @onClick,
       @props.children
 
 module.exports = React.createClass
-  displayName: 'light-popover'
+  displayName: 'lite-popover'
   mixins: [mixinLayered]
 
   propTypes:

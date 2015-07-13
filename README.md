@@ -4,7 +4,7 @@ React Lite Modal, Popover, Overlay
 
 Modal, Popover, Overlay components from Talk by Teambition.
 
-Demo http://teambition.github.io/react-lite-layered/
+Demo http://ui.talk.ai/react-lite-layered/
 
 Inspired by http://stackoverflow.com/a/26789089/883571
 

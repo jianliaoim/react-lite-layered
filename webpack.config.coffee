@@ -6,7 +6,7 @@ module.exports =
     main: [
       'webpack-dev-server/client?http://0.0.0.0:8080'
       'webpack/hot/dev-server'
-      './src/main'
+      './src/demo/main'
     ]
   output:
     path: 'build/'
@@ -18,5 +18,6 @@ module.exports =
       {test: /\.jsx$/, exclude: /node_modules/, loader: 'babel-loader'}
       {test: /\.coffee$/, loader: 'coffee'}
       {test: /\.css$/, loader: 'style!css'}
+      {test: /\.less$/, loader: 'style!css!less'}
     ]
   plugins: []

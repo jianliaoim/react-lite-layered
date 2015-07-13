@@ -1,21 +1,20 @@
 
 import {default as React} from 'react';
 
-import {Popover as Popover} from './index';
-import {Modal as Modal} from './index';
-import {Overlay as Overlay} from './index';
+import {Dialog as Dialog} from '../index';
+import {Popover as Popover} from '../index';
+import {Modal as Modal} from '../index';
+import {Overlay as Overlay} from '../index';
 
-import './modal.css';
-import './popover.css';
-import './overlay.css';
-import './fade.css';
-import './demo.css';
+import './theme.css';
+import '../style.less';
 
 var App = React.createClass({
   displayName: 'page-app',
 
   getInitialState: function () {
     return {
+      showDialog: false,
       showModal: false,
       showPopover: false,
       showOverlay: false
@@ -34,12 +33,20 @@ var App = React.createClass({
     }
   },
 
+  onDialogShow: function() {
+    this.setState({showDialog: true});
+  },
+
+  onDialogClose: function() {
+    this.setState({showDialog: false});
+  },
+
   onModalShow: function() {
-    this.setState({showModal: true})
+    this.setState({showModal: true});
   },
 
   onModalHide: function() {
-    this.setState({showModal: false})
+    this.setState({showModal: false});
   },
 
   onPopoverToggle: function(event){
@@ -57,6 +64,15 @@ var App = React.createClass({
 
   onOverlayClose: function() {
     this.setState({showOverlay: false})
+  },
+
+  renderDialog: function() {
+    return <Dialog
+      content="demo of Dialog"
+      cancel="cancel" confirm="confirm"
+      onCloseClick={this.onDialogClose} onConfirm={this.onDialogClose} show={this.state.showDialog}>
+      <div>{"hey"}</div>
+    </Dialog>
   },
 
   renderModal: function() {
@@ -95,9 +111,11 @@ var App = React.createClass({
 
   render: function() {
     return <div className="page-app">
+        <div className="button" onClick={this.onDialogShow}>Show Dialog</div>
         <div className="button" onClick={this.onModalShow}>Show Modal</div>
         <div className="button" ref="area" onClick={this.onPopoverToggle}>Show Popover</div>
         <div className="button" onClick={this.onOverlayToggle}>Show Overlay</div>
+        {this.renderDialog()}
         {this.renderModal()}
         {this.renderPopover()}
         {this.renderOverlay()}

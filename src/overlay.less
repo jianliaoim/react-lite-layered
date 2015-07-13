@@ -1,0 +1,26 @@
+.lite-overlay {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: black;
+  z-index: 220;
+  overflow: auto;
+  .display(flex);
+  .justify-content(center);
+  .align-items(center);
+
+  img {
+    flex: none;
+    margin: auto;
+    cursor: zoom-out;
+    cursor: -webkit-zoom-out;
+  }
+
+  img.is-large {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

@@ -1,0 +1,69 @@
+
+body {
+  padding: 100px 100px 300px 100px;
+  font-family: Palatino, Optima, Georgia, serif;
+  font-size: 16px;
+  line-height: 1.6em;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.content {
+  padding: 10px;
+  background-color: white;
+}
+
+.button {
+  background-color: #ccf;
+  outline: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  white-space: nowrap;
+  cursor: pointer;
+  touch-action: manipulation;
+  border-radius: 3px;
+  border: none;
+  text-transform: none;
+  -webkit-user-select: none;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  vertical-align: middle;
+  min-width: 80px;
+  margin-right: 20px;
+}
+
+.button.is-danger {
+  color: white;
+  background-color: #ff7043;
+
+  &:hover {
+    color: white;
+    background-color: darken(#ff7043, 5%)
+  }
+}
+
+.button.is-danger {
+  color: white;
+  background-color: #ff7043;
+}
+
+.button.is-link {
+  background-color: transparent;
+  color: #808080;;
+}
+
+.demo {
+  margin: 40px 0;
+}
+
+.demo .button {
+  padding: 0 20px;
+}
+

@@ -1,5 +1,5 @@
 
-React = require 'react'
+React = require 'react/addons'
 
 div = React.createFactory 'div'
 
@@ -23,7 +23,7 @@ module.exports = React.createClass
   renderLayer: (afterTransition) ->
     Transition transitionName: 'fade', enterTimeout: 200, leaveTimeout: 350,
       if @props.show and afterTransition
-        div className: "light-overlay is-for-#{@props.name}",
+        div className: "lite-overlay is-for-#{@props.name}",
           @props.children
 
   render: ->
