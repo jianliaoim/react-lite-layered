@@ -1,5 +1,5 @@
 
-React = require 'react'
+React = require 'react/addons'
 
 div = React.createFactory 'div'
 

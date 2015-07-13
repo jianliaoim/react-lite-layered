@@ -1,5 +1,5 @@
 
-React = require 'react'
+React = require 'react/addons'
 keycode = require 'keycode'
 
 mixinLayered = require './mixin-layered'
@@ -20,12 +20,10 @@ module.exports = React.createClass
 
   propTypes:
     # this components accepts children
-    name:         T.string
-    title:        T.string
-    flexible:     T.bool
-    getText:      T.func
     cancel:       T.string
     confirm:      T.string
+    content:      T.string
+    flexible:     T.bool
     show:         T.bool.isRequired
     onCloseClick: T.func.isRequired
     onConfirm:    T.func.isRequired
@@ -54,9 +52,9 @@ module.exports = React.createClass
   renderActions: ->
     div className: 'actions line',
       button className: 'button is-link', onClick: @onCloseClick,
-        if @props.getText? then @props.getText @props.cancel else @props.cancel
+        @props.cancel
       button className: 'button is-danger', onClick: @onConfirmClick,
-        if @props.getText? then @props.getText @props.confirm else @props.confirm
+        @props.confirm
 
   renderLayer: (afterTransition) ->
     className = "lite-dialog is-for-#{@props.name}"
@@ -66,11 +64,8 @@ module.exports = React.createClass
         div className: className, onClick: @onBackdropClick,
           div className: 'wrapper', onClick: @onBackdropClick,
             div className: boxClassName,
-              if @props.title?
-                div className: 'title',
-                  span className: 'name', @props.title
-                  span className: 'button-close icon icon-remove', onClick: @onCloseClick
               div className: 'content',
+                div className: 'inner', @props.content
                 @props.children
                 @renderActions()
 
