@@ -67,3 +67,13 @@ body {
   padding: 0 20px;
 }
 
+.lite-overlay .content {
+  width: 300px;
+  height: 20px;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
