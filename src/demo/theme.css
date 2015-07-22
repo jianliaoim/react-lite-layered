@@ -77,3 +77,15 @@ body {
   top: 0;
   bottom: 0;
 }
+
+.lite-reader-modal .header{
+  padding: 17px 20px;
+  border-bottom: 1px solid #efefef;
+  text-align: center;
+
+}
+.lite-reader-modal .footer{
+  padding: 17px 20px;
+  border-top: 1px solid #efefef;
+  text-align: center;
+}

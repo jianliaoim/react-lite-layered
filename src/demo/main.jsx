@@ -5,6 +5,7 @@ import {Dialog as Dialog} from '../index';
 import {Popover as Popover} from '../index';
 import {Modal as Modal} from '../index';
 import {Overlay as Overlay} from '../index';
+import {ReaderModal} from '../index'
 
 import './theme.css';
 import '../style.less';
@@ -17,7 +18,8 @@ var App = React.createClass({
       showDialog: false,
       showModal: false,
       showPopover: false,
-      showOverlay: false
+      showOverlay: false,
+      showReaderModal: false
     };
   },
 
@@ -44,13 +46,19 @@ var App = React.createClass({
   onModalShow: function() {
     this.setState({showModal: true});
   },
+  onReaderModalShow: function() {
+    this.setState({showReaderModal: true});
+  },
 
   onModalHide: function() {
     this.setState({showModal: false});
   },
+  onReaderModalHide: function() {
+    this.setState({showReaderModal: false});
+  },
 
   onPopoverToggle: function(event){
-    event.stopPropagation()
+    event.stopPropagation();
     this.setState({showPopover: !this.state.showPopover})
   },
 
@@ -109,16 +117,35 @@ var App = React.createClass({
     </Overlay>
   },
 
+  renderReaderModal: function() {
+    return <ReaderModal
+        name="page-app"
+        onCloseClick={this.onReaderModalHide} showClose={true} show={this.state.showReaderModal}>
+      <div>
+          <div className="header">This is reader demo</div>
+          <div className="content">
+            <p style={{height:'500px'}}>The paragraph is 500px high</p>
+          </div>
+          <div className="footer">End of reader modal</div>
+      </div>
+    </ReaderModal>
+  },
+
+
+
   render: function() {
     return <div className="page-app">
         <div className="button" onClick={this.onDialogShow}>Show Dialog</div>
         <div className="button" onClick={this.onModalShow}>Show Modal</div>
         <div className="button" ref="area" onClick={this.onPopoverToggle}>Show Popover</div>
         <div className="button" onClick={this.onOverlayToggle}>Show Overlay</div>
+        <div className="button" onClick={this.onReaderModalShow}>Show Reader Modal</div>
+
         {this.renderDialog()}
         {this.renderModal()}
         {this.renderPopover()}
         {this.renderOverlay()}
+        {this.renderReaderModal()}
     </div>
   }
 });
