@@ -3,6 +3,8 @@ React = require 'react/addons'
 
 mixinLayered = require './mixin-layered'
 
+Transition = React.createFactory (require './transition')
+
 div  = React.createFactory 'div'
 span = React.createFactory 'span'
 a    = React.createFactory 'a'
