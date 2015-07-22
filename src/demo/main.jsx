@@ -19,7 +19,7 @@ var App = React.createClass({
       showModal: false,
       showPopover: false,
       showOverlay: false,
-      showReaderModal: true
+      showReaderModal: false
     };
   },
 
@@ -121,7 +121,7 @@ var App = React.createClass({
     return <ReaderModal
         name="page-app" header="demo of Modal" footer="end of demo"
         onCloseClick={this.onReaderModalHide} showClose={true} show={this.state.showReaderModal}>
-      <div><p style={{height:'500px'}}>asdasdsad</p></div>
+      <div><p style={{height:'500px'}}>The paragraph is 500px high</p></div>
     </ReaderModal>
   },
 
