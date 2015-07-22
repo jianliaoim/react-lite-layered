@@ -1,14 +1,14 @@
 
-import {default as React} from 'react';
+import {default as React} from 'react'
 
-import {Dialog as Dialog} from '../index';
-import {Popover as Popover} from '../index';
-import {Modal as Modal} from '../index';
-import {Overlay as Overlay} from '../index';
+import {Dialog as Dialog} from '../index'
+import {Popover as Popover} from '../index'
+import {Modal as Modal} from '../index'
+import {Overlay as Overlay} from '../index'
 import {ReaderModal} from '../index'
 
-import './theme.css';
-import '../style.less';
+import './theme.css'
+import '../style.less'
 
 var App = React.createClass({
   displayName: 'page-app',
@@ -20,7 +20,7 @@ var App = React.createClass({
       showPopover: false,
       showOverlay: false,
       showReaderModal: false
-    };
+    }
   },
 
   componentDidMount: function() {
@@ -36,29 +36,29 @@ var App = React.createClass({
   },
 
   onDialogShow: function() {
-    this.setState({showDialog: true});
+    this.setState({showDialog: true})
   },
 
   onDialogClose: function() {
-    this.setState({showDialog: false});
+    this.setState({showDialog: false})
   },
 
   onModalShow: function() {
-    this.setState({showModal: true});
+    this.setState({showModal: true})
   },
   onReaderModalShow: function() {
-    this.setState({showReaderModal: true});
+    this.setState({showReaderModal: true})
   },
 
   onModalHide: function() {
-    this.setState({showModal: false});
+    this.setState({showModal: false})
   },
   onReaderModalHide: function() {
-    this.setState({showReaderModal: false});
+    this.setState({showReaderModal: false})
   },
 
   onPopoverToggle: function(event){
-    event.stopPropagation();
+    event.stopPropagation()
     this.setState({showPopover: !this.state.showPopover})
   },
 
@@ -148,10 +148,10 @@ var App = React.createClass({
         {this.renderReaderModal()}
     </div>
   }
-});
+})
 
-var PageApp = React.createFactory(App);
+var PageApp = React.createFactory(App)
 
-var demo = document.querySelector('.demo');
+var demo = document.querySelector('.demo')
 
-React.render(PageApp(), demo);
+React.render(PageApp(), demo)
