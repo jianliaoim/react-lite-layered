@@ -86,7 +86,7 @@ var App = React.createClass({
   renderModal: function() {
     return <Modal
       name="page-app" title="demo of Modal"
-      onCloseClick={this.onReaderModalClose} showClose={true} show={this.state.showModal}>
+      onCloseClick={this.onModalHide} showClose={true} show={this.state.showModal}>
       <div>{"Content of Modal, style this for yor self."}</div>
       <div>{"Better if you add some padding~"}</div>
     </Modal>
@@ -119,9 +119,15 @@ var App = React.createClass({
 
   renderReaderModal: function() {
     return <ReaderModal
-        name="page-app" header="demo of Modal" footer="end of demo"
+        name="page-app"
         onCloseClick={this.onReaderModalHide} showClose={true} show={this.state.showReaderModal}>
-      <div><p style={{height:'500px'}}>The paragraph is 500px high</p></div>
+      <div>
+          <div className="header">This is reader demo</div>
+          <div className="content">
+            <p style={{height:'500px'}}>The paragraph is 500px high</p>
+          </div>
+          <div className="footer">End of reader modal</div>
+      </div>
     </ReaderModal>
   },
 
