@@ -3,8 +3,6 @@ React = require 'react/addons'
 
 mixinLayered = require './mixin-layered'
 
-Transition = React.createFactory (require './transition')
-
 div  = React.createFactory 'div'
 span = React.createFactory 'span'
 a    = React.createFactory 'a'
@@ -15,7 +13,7 @@ PopoverMenu = React.createFactory React.createClass
   displayName: 'lite-popover-menu'
 
   propTypes:
-    # accepts children
+  # accepts children
     onClose: T.func.isRequired
     style: T.object.isRequired
     decorator: T.string.isRequired
@@ -46,7 +44,7 @@ module.exports = React.createClass
   mixins: [mixinLayered]
 
   propTypes:
-    # this component accepts children
+  # this component accepts children
     title:              T.string
     name:               T.string
     onPopoverClose:     T.func
