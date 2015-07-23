@@ -14,11 +14,11 @@ T = React.PropTypes
 cx = require 'classnames'
 
 module.exports = React.createClass
-  displayName: 'reader-modal'
+  displayName: 'file-modal'
   mixins: [mixinLayered]
 
   propTypes:
-    # this components accepts children
+  # this components accepts children
     name:             T.string
     title:            T.string
     onCloseClick:     T.func.isRequired
@@ -44,12 +44,13 @@ module.exports = React.createClass
         @onCloseClick()
 
   renderLayer: (afterTransition) ->
-    className = "lite-reader-modal is-for-#{@props.name}"
+    className = "lite-file-modal is-for-#{@props.name}"
     Transition transitionName: 'fade', enterTimeout: 200, leaveTimeout: 350,
       if @props.show and afterTransition
         div className: className, onClick: @onBackdropClick,
-          div className: 'box', onClick: @onBackdropClick,
-            @props.children
+          div className: 'wrapper', onClick: @onBackdropClick,
+            div className: 'box', onClick: @onBackdropClick,
+              @props.children
 
 
   render: ->

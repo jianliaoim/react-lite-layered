@@ -1,11 +1,7 @@
 
-import {default as React} from 'react'
+import React from 'react'
 
-import {Dialog as Dialog} from '../index'
-import {Popover as Popover} from '../index'
-import {Modal as Modal} from '../index'
-import {Overlay as Overlay} from '../index'
-import {ReaderModal} from '../index'
+import {Dialog, Popover, Modal, Overlay, ReaderModal, FileModal} from '../index'
 
 import './theme.css'
 import '../style.less'
@@ -19,7 +15,8 @@ var App = React.createClass({
       showModal: false,
       showPopover: false,
       showOverlay: false,
-      showReaderModal: false
+      showReaderModal: false,
+      showFileModal: false
     }
   },
 
@@ -49,6 +46,9 @@ var App = React.createClass({
   onReaderModalShow: function() {
     this.setState({showReaderModal: true})
   },
+  onFileModalShow: function() {
+    this.setState({showFileModal: true})
+  },
 
   onModalHide: function() {
     this.setState({showModal: false})
@@ -56,7 +56,9 @@ var App = React.createClass({
   onReaderModalHide: function() {
     this.setState({showReaderModal: false})
   },
-
+  onFileModalHide: function() {
+    this.setState({showFileModal: false})
+  },
   onPopoverToggle: function(event){
     event.stopPropagation()
     this.setState({showPopover: !this.state.showPopover})
@@ -131,7 +133,19 @@ var App = React.createClass({
     </ReaderModal>
   },
 
-
+  renderFileModal: function() {
+    return <FileModal
+        name="page-app"
+        onCloseClick={this.onFileModalHide} showClose={true} show={this.state.showFileModal}>
+      <div>
+        <div className="header">This is file modal demo</div>
+        <div className="content">
+          <p style={{height:'500px'}}>The paragraph is 500px high</p>
+        </div>
+        <div className="footer">End of file modal</div>
+      </div>
+    </FileModal>
+  },
 
   render: function() {
     return <div className="page-app">
@@ -140,12 +154,14 @@ var App = React.createClass({
         <div className="button" ref="area" onClick={this.onPopoverToggle}>Show Popover</div>
         <div className="button" onClick={this.onOverlayToggle}>Show Overlay</div>
         <div className="button" onClick={this.onReaderModalShow}>Show Reader Modal</div>
+        <div className="button" onClick={this.onFileModalShow}>Show File Modal</div>
 
         {this.renderDialog()}
         {this.renderModal()}
         {this.renderPopover()}
         {this.renderOverlay()}
         {this.renderReaderModal()}
+        {this.renderFileModal()}
     </div>
   }
 })
