@@ -39,9 +39,8 @@ module.exports = React.createClass
     @props.onCloseClick()
 
   onBackdropClick: (event) ->
-    unless @props.showCornerClose
-      if event.target is event.currentTarget
-        @onCloseClick()
+    if not @props.showCornerClose && event.target is event.currentTarget
+      @onCloseClick()
 
   renderLayer: (afterTransition) ->
     className = "lite-reader-modal is-for-#{@props.name}"
