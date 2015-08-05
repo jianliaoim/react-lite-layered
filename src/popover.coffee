@@ -75,10 +75,10 @@ module.exports = React.createClass
 
   renderLayer: (afterTransition) ->
     decorator = "is-#{@props.name or 'default'}"
-    s = @computePosition()
     div null,
       if @props.show and afterTransition
-        PopoverMenu style: s, decorator: decorator, onClose: @onPopoverClose,
+        style = @computePosition()
+        PopoverMenu style: style, decorator: decorator, onClose: @onPopoverClose,
           if @props.title?
             div className: 'header',
               span className: 'title', @props.title
