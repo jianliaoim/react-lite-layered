@@ -46,8 +46,8 @@ module.exports = React.createClass
     className = "lite-reader-modal is-for-#{@props.name}"
     Transition transitionName: 'fade', enterTimeout: 200, leaveTimeout: 350,
       if @props.show and afterTransition
-        div className: className, onClick: @onBackdropClick,
-          div className: 'box', onClick: @onBackdropClick,
+        div className: className, onMouseDown: @onBackdropClick,
+          div className: 'box', onMouseDown: @onBackdropClick,
             @props.children
 
 

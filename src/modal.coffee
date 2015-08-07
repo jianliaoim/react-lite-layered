@@ -35,10 +35,13 @@ module.exports = React.createClass
     if keycode(event.keyCode) is 'esc'
       @onCloseClick()
 
-  onCloseClick: ->
+  onCloseClick: ()->
     @props.onCloseClick()
 
   onBackdropClick: (event) ->
+    event.stopPropagation()
+    #Object.keys(event).forEach (key) ->
+    #  console.log key,event[key]
     if not @props.showCornerClose && event.target is event.currentTarget
       @onCloseClick()
 
@@ -47,8 +50,8 @@ module.exports = React.createClass
 
     Transition transitionName: 'fade', enterTimeout: 200, leaveTimeout: 350,
       if @props.show and afterTransition
-        div className: className, onClick: @onBackdropClick,
-          div className: 'wrapper', onClick: @onBackdropClick,
+        div className: className, onMouseDown: @onBackdropClick,
+          div className: 'wrapper', onMouseDown: @onBackdropClick,
             div className: 'box',
               if @props.title?
                 div className: 'title',
