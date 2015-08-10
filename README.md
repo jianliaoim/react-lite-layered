@@ -73,10 +73,12 @@ propTypes:
   show:             T.bool.isRequired
 ```
 > Child structure
+```
 div
   .header (fixed at top)
   .content (scrollable)
   .footer (fixed at bottom)
+```
 
 ##### File Modal
 
