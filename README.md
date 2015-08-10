@@ -1,8 +1,8 @@
 
-React Lite Modal, Popover, Overlay
+React Lite Dialog, Modals, Popover, Overlay
 ----
 
-Modal, Popover, Overlay components from Talk by Teambition.
+Dialog, Modals, Popover, Overlay components from Talk by Teambition.
 
 Demo http://ui.talk.ai/react-lite-layered/
 
@@ -10,7 +10,7 @@ Inspired by http://stackoverflow.com/a/26789089/883571
 
 ### Properties
 
-This module contains 3 layered components. There are some **common properties**:
+This module contains 6 layered components. There are some **common properties**:
 
 * `show`(`bool.isRequired`) controls visibility
 * `name`(`string`, defaults to `default`), CSS hook `"is-for-#{name}"`
@@ -59,6 +59,39 @@ propTypes:
 
 > Notice: click content to close overlay, not the black area.
 
+##### Reader Modal
+
+```coffee
+T = React.PropTypes
+
+propTypes:
+  # this component accepts children
+  name:             T.string
+  title:            T.string
+  onCloseClick:     T.func.isRequired
+  showCornerClose:  T.bool
+  show:             T.bool.isRequired
+```
+> Child structure
+div
+  .header (fixed at top)
+  .content (scrollable)
+  .footer (fixed at bottom)
+
+##### File Modal
+
+```coffee
+T = React.PropTypes
+
+propTypes:
+  # this component accepts children
+  name:             T.string
+  title:            T.string
+  onCloseClick:     T.func.isRequired
+  showCornerClose:  T.bool
+  show:             T.bool.isRequired
+```
+
 ##### Transition
 
 Transition component with timeout.
@@ -77,16 +110,14 @@ And the `layered` mixin is tricky. I hope it improved in the future.
 npm i --save react-lite-layered
 ```
 
-Read [src/main.jsx](main)(compiles with Babel) for details:
+Read [src/demo/main.jsx](main)(compiles with Babel) for details:
 
-[main]: https://github.com/teambition/react-lite-layered/blob/gh-pages/src/main.jsx
+[main]: https://github.com/teambition/react-lite-layered/blob/master/src/demo/main.jsx
 
 ```jsx
 import {default as React} from 'react';
 
-import {Popover as Popover} from 'react-lite-layered';
-import {Modal as Modal} from 'react-lite-layered';
-import {Overlay as Overlay} from 'react-lite-layered';
+import {Popover, Modal, Overlay} from 'react-lite-layered';
 
 import './modal.css';
 import './popover.css';
@@ -199,6 +230,11 @@ Develop:
 ```bash
 gulp html # regenerate index.html
 webpack-dev-server --hot # enable live-reloading
+```
+
+or simply
+```bash
+npm run dev
 ```
 
 Build (Pack and optimize js, reivision js and add entry in `index.html`):
