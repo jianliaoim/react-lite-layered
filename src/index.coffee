@@ -1,6 +1,7 @@
 
 exports.Dialog = require './module/dialog'
 exports.FileModal = require './module/file-modal'
+exports.MiniWrapper = require './module/mini-wrapper'
 exports.Modal = require './module/modal'
 exports.Overlay = require './module/overlay'
 exports.Popover = require './module/popover'

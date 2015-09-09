@@ -2,6 +2,7 @@ React = require 'react'
 
 LiteDialog = React.createFactory require('../src/index').Dialog
 LiteFileModal = React.createFactory require('../src/index').FileModal
+LiteMiniWrapper = React.createFactory require('../src/index').MiniWrapper
 LiteModal = React.createFactory require('../src/index').Modal
 LiteOverlay = React.createFactory require('../src/index').Overlay
 LitePopover = React.createFactory require('../src/index').Popover
@@ -66,6 +67,11 @@ App = React.createFactory React.createClass
             p style: height: '500px', 'This paragraph\'s height is 500px'
           div className: 'footer', 'Footer'
 
+  renderMiniWrapper: ->
+    LiteMiniWrapper
+      title: 'Mini Wrapper Demo',
+        div null, 'hey'
+
   renderModal: ->
     LiteModal
       show: @state.showModal
@@ -112,6 +118,8 @@ App = React.createFactory React.createClass
       div className: 'button', onClick: @onOverlayToggle, 'Overlay'
       div className: 'button', ref: 'area', onClick: @onPopoverToggle, 'Popover'
       div className: 'button', onClick: @onReaderModalShow, 'Reader Modal'
+      div null,
+        @renderMiniWrapper()
 
       @renderDialog()
       @renderFileModal()
