@@ -1,15 +1,18 @@
 ExtractTextPlugin = require 'extract-text-webpack-plugin'
 webpack = require 'webpack'
 
+fontName = 'fonts/[name].[ext]'
+imageName = 'images/[name].[ext]'
+
 module.exports =
   entry:
     vendor: [
-      'webpack-dev-server/client?http://localhost:8080'
+      'webpack-dev-server/client?http://0.0.0.0:8080'
       'webpack/hot/dev-server'
       'react'
     ]
-    main: './example/main'
-    style: './example/main.less'
+    main: './example/main.jsx'
+    style: './example/main.css'
   output:
     path: 'build/'
     filename: '[name].js'

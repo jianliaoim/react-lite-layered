@@ -8,7 +8,7 @@ module.exports =
   entry:
     vendor: []
     main: './example/main'
-    style: './example/main.less'
+    style: './example/main.css'
   output:
     path: 'build/'
     filename: '[name].[chunkhash:8].js'
