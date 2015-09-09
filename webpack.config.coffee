@@ -1,23 +1,93 @@
-
-fs = require('fs')
+ExtractTextPlugin = require 'extract-text-webpack-plugin'
+webpack = require 'webpack'
 
 module.exports =
   entry:
-    main: [
-      'webpack-dev-server/client?http://0.0.0.0:8080'
+    vendor: [
+      'webpack-dev-server/client?http://localhost:8080'
       'webpack/hot/dev-server'
-      './src/demo/main'
+      'react'
     ]
+    main: './example/main'
+    style: './example/main.less'
   output:
     path: 'build/'
     filename: '[name].js'
     publicPath: 'http://localhost:8080/build/'
-  resolve: extensions: ['.jsx', '.js', '.coffee', '']
+  resolve:
+    extensions: ['.coffee', '.js', '.jsx', '']
   module:
     loaders: [
-      {test: /\.jsx$/, exclude: /node_modules/, loader: 'babel-loader'}
-      {test: /\.coffee$/, loader: 'coffee'}
-      {test: /\.css$/, loader: 'style!css'}
-      {test: /\.less$/, loader: 'style!css!less'}
+      {
+        test: /\.coffee$/
+        loader: 'coffee'
+      }
+      {
+        test: /\.js$/
+        exclude: /node_modules/
+        loader: 'babel'
+      }
+      {
+        test: /\.jsx$/
+        exclude: /node_modules/
+        loader: 'babel'
+      }
+      {
+        test: /\.css$/
+        loader: ExtractTextPlugin.extract 'style', 'css?importLoaders=1!autoprefixer?{browsers:["> 1%"]}'
+      }
+      {
+        test: /\.less$/
+        loader: ExtractTextPlugin.extract 'style', 'css?importLoaders=1!autoprefixer?{browsers:["> 1%"]}!less'
+      }
+      {
+        test: /\.(png|jpg|gif)$/
+        loader: 'url'
+        query:
+          limit: 2048
+          name: imageName
+      }
+      {
+        test: /\.eot((\?|\#)[\?\#\w\d_-]+)?$/
+        loader: 'url'
+        query:
+          limit: 100
+          name: fontName
+      }
+      {
+        test: /\.svg((\?|\#)[\?\#\w\d_-]+)?$/
+        loader: 'url'
+        query:
+          limit: 10000
+          minetype: 'image/svg+xml'
+          name: fontName
+      }
+      {
+        test: /\.ttf((\?|\#)[\?\#\w\d_-]+)?$/
+        loader: 'url'
+        query:
+          limit: 100
+          minetype: 'application/octet-stream'
+          name: fontName
+      }
+      {
+        test: /\.woff((\?|\#)[\?\#\w\d_-]+)?$/
+        loader: 'url'
+        query:
+          limit: 100
+          minetype: 'application/font-woff'
+          name: fontName
+      }
+      {
+        test: /\.woff2((\?|\#)[\?\#\w\d_-]+)?$/
+        loader: 'url'
+        query:
+          limit: 100
+          minetype: 'application/font-woff2'
+          name: fontName
+      }
     ]
-  plugins: []
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin 'vendor', 'vendor.js'
+    new ExtractTextPlugin 'style.css'
+  ]

@@ -1,10 +1,6 @@
-
 import React from 'react'
-
-import {Dialog, Popover, Modal, Overlay, ReaderModal, FileModal} from '../index'
-
-import './theme.css'
-import '../style.less'
+import {Dialog, Popover, Modal, Overlay, ReaderModal, FileModal} from '../src/index'
+import '../src/index.less'
 
 var App = React.createClass({
   displayName: 'page-app',
@@ -168,6 +164,6 @@ var App = React.createClass({
 
 var PageApp = React.createFactory(App)
 
-var demo = document.querySelector('.demo')
+var demo = document.querySelector('.example')
 
 React.render(PageApp(), demo)
