@@ -1,7 +1,7 @@
 {
   "name": "react-lite-layered",
   "version": "0.0.9",
-  "description": "Dropdown menu from Talk by teambition",
+  "description": "Various layer component of Talk",
   "main": "lib/index.js",
   "dependencies": {
     "bowser": "^1.0.0",
@@ -12,38 +12,44 @@
     "volubile-ui": "^0.0.11"
   },
   "devDependencies": {
-    "babel-core": "^5.1.10",
-    "babel-loader": "^5.0.0",
+    "autoprefixer-loader": "^2.0.0",
     "cirru-script": "^0.2.3",
     "coffee-loader": "^0.7.2",
-    "coffee-script": "^1.9.1",
-    "css-loader": "^0.17.0",
-    "del": "^2.0.2",
-    "gulp": "^3.8.11",
+    "coffee-script": "^1.9.3",
+    "css-loader": "^0.16.0",
+    "del": "^1.2.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
+    "gulp": "^3.9.0",
     "gulp-coffee": "^2.3.1",
     "less": "^2.5.1",
     "less-loader": "^2.2.0",
     "node-libs-browser": "^0.5.2",
     "rsyncwrapper": "^0.4.3",
-    "run-sequence": "^1.0.2",
+    "run-sequence": "^1.1.2",
     "stir-template": "^0.1.4",
     "style-loader": "^0.12.3",
     "url-loader": "^0.5.6",
-    "webpack": "^1.8.4",
-    "webpack-dev-server": "^1.8.0"
+    "webpack": "^1.10.5",
+    "webpack-dev-server": "^1.10.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "gulp html && webpack-dev-server --hot --host=0.0.0.0"
+    "prepublish": "rm -rf lib/ && gulp script",
+    "prestart": "gulp html",
+    "rsync": "gulp build && gulp rsync",
+    "start": "webpack-dev-server --hot --progress --host=0.0.0.0"
   },
   "keywords": [
-    "react-component",
+    "dialog",
     "dropdown",
     "modal",
-    "dialog",
-    "popover"
+    "popover",
+    "react",
+    "react-component",
+    "react-lite",
+    "talk"
   ],
-  "author": "Teambition jiyinyiyong",
+  "author": "Teambition",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -52,5 +58,5 @@
   "bugs": {
     "url": "https://github.com/teambition/react-lite-dropdown/issues"
   },
-  "homepage": "https://github.com/teambition/react-lite-dropdown"
+  "homepage": "https://github.com/teambition/react-lite-dropdown#readme"
 }
