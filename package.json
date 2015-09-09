@@ -9,6 +9,7 @@
     "flex.less": "^1.1.0",
     "keycode": "^2.0.0",
     "react": "^0.13.1",
+    "teambition-icon-fonts": "^0.72.11",
     "volubile-ui": "^0.0.11"
   },
   "devDependencies": {
