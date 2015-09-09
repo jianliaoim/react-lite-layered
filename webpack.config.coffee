@@ -11,8 +11,8 @@ module.exports =
       'webpack/hot/dev-server'
       'react'
     ]
-    main: './example/main.jsx'
-    style: './example/main.css'
+    main: './example/main'
+    style: './example/main.less'
   output:
     path: 'build/'
     filename: '[name].js'
