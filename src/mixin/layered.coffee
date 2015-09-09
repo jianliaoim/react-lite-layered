@@ -2,7 +2,7 @@
 # Code mostly done at:
 # http://stackoverflow.com/a/26789089/883571
 
-React = require 'react/addons'
+React = require 'react'
 # bowser = require 'bowser'
 
 div = React.createFactory 'div'

@@ -1,11 +1,10 @@
+React = require 'react'
 
-React = require 'react/addons'
+mixinLayered = require '../mixin/layered'
+
+Transition = React.createFactory require '../util/transition'
 
 div = React.createFactory 'div'
-
-mixinLayered = require './mixin-layered'
-
-Transition = React.createFactory (require './transition')
 
 T = React.PropTypes
 

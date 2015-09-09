@@ -3,7 +3,7 @@
 # compiled by JSX compiler and js2coffee
 # rewrite to remove jQuery dependency
 
-React = require("react/addons")
+React = require 'react'
 
 animationSupported = ->
   endEvents.length isnt 0

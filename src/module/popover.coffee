@@ -1,11 +1,10 @@
+React = require 'react'
 
-React = require 'react/addons'
+mixinLayered = require '../mixin/layered'
 
-mixinLayered = require './mixin-layered'
-
-div  = React.createFactory 'div'
+a = React.createFactory 'a'
+div = React.createFactory 'div'
 span = React.createFactory 'span'
-a    = React.createFactory 'a'
 
 T = React.PropTypes
 

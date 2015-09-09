@@ -1,18 +1,17 @@
-
-React = require 'react/addons'
+cx = require 'classnames'
+React = require 'react'
 keycode = require 'keycode'
 
-mixinLayered = require './mixin-layered'
+mixinLayered = require '../mixin/layered'
 
-Transition = React.createFactory require './transition'
+Transition = React.createFactory require '../util/transition'
 
-div    = React.createFactory 'div'
-span   = React.createFactory 'span'
-a      = React.createFactory 'a'
+a = React.createFactory 'a'
 button = React.createFactory 'button'
+div = React.createFactory 'div'
+span = React.createFactory 'span'
 
 T = React.PropTypes
-cx = require 'classnames'
 
 module.exports = React.createClass
   displayName: 'lite-dialog'
