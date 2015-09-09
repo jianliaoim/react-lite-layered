@@ -10,9 +10,8 @@ module.exports =
       'webpack-dev-server/client?http://0.0.0.0:8080'
       'webpack/hot/dev-server'
       'react'
-    ]
-    main: './example/main'
-    style: './example/main.less'
+    ],
+    main: ['./example/main', './example/main.less']
   output:
     path: 'build/'
     filename: '[name].js'

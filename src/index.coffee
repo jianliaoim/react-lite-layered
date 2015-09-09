@@ -1,3 +1,4 @@
+require 'teambition-icon-fonts/css/teambition-ui-icons.css'
 
 exports.Dialog = require './module/dialog'
 exports.FileModal = require './module/file-modal'

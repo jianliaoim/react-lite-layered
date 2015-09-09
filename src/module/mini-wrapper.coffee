@@ -4,6 +4,7 @@ React = require 'react'
 a = React.createFactory 'a'
 button = React.createFactory 'button'
 div = React.createFactory 'div'
+i = React.createFactory 'i'
 span = React.createFactory 'span'
 
 T = React.PropTypes
@@ -26,5 +27,5 @@ module.exports = React.createClass
     div className: className,
       div className: 'header', @props.title,
         if @props.showClose?
-          button className: 'button-close', 'x'
+          i className: 'icon icon-remove button-close'
       div className: 'content', @props.children

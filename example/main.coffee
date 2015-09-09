@@ -118,7 +118,7 @@ App = React.createFactory React.createClass
       div className: 'button', onClick: @onOverlayToggle, 'Overlay'
       div className: 'button', ref: 'area', onClick: @onPopoverToggle, 'Popover'
       div className: 'button', onClick: @onReaderModalShow, 'Reader Modal'
-      div null,
+      div className: 'section',
         @renderMiniWrapper()
 
       @renderDialog()
