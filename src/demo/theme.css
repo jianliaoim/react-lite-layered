@@ -43,10 +43,11 @@ body {
   color: white;
   background-color: #ff7043;
 
-  &:hover {
-    color: white;
-    background-color: darken(#ff7043, 5%)
-  }
+}
+
+.button.is-danger:hover {
+  color: white;
+  background-color: darken(#ff7043, 5%)
 }
 
 .button.is-danger {

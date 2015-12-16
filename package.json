@@ -1,13 +1,13 @@
 {
   "name": "react-lite-layered",
-  "version": "0.1.0-beta2",
+  "version": "0.1.0-beta3",
   "description": "Dropdown menu from Talk by teambition",
   "main": "lib/index.js",
   "dependencies": {
     "bowser": "^0.7.2",
     "classnames": "^1.2.0",
     "keycode": "^2.0.0",
-    "react": ">0.13.1",
+    "react": "^0.14.3",
     "react-addons-transition-group": "^0.14.3",
     "react-dom": "^0.14.3",
     "volubile-ui": "0.0.13"
