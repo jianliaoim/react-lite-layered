@@ -1,17 +1,19 @@
 {
   "name": "react-lite-layered",
-  "version": "0.0.9",
+  "version": "0.1.0-beta2",
   "description": "Dropdown menu from Talk by teambition",
   "main": "lib/index.js",
   "dependencies": {
     "bowser": "^0.7.2",
     "classnames": "^1.2.0",
-    "flex.less": "^1.1.0",
     "keycode": "^2.0.0",
-    "react": "^0.13.1",
-    "volubile-ui": "^0.0.4"
+    "react": ">0.13.1",
+    "react-addons-transition-group": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "volubile-ui": "0.0.13"
   },
   "devDependencies": {
+    "autoprefixer-loader": "^3.1.0",
     "babel-core": "^5.1.10",
     "babel-loader": "^5.0.0",
     "cirru-script": "^0.2.3",
@@ -47,10 +49,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/teambition/react-lite-dropdown.git"
+    "url": "https://github.com/teambition/react-lite-layered.git"
   },
   "bugs": {
-    "url": "https://github.com/teambition/react-lite-dropdown/issues"
+    "url": "https://github.com/teambition/react-lite-layered/issues"
   },
-  "homepage": "https://github.com/teambition/react-lite-dropdown"
+  "homepage": "https://github.com/teambition/react-lite-layered"
 }

@@ -1,5 +1,5 @@
 
-React = require 'react/addons'
+React = require 'react'
 
 mixinLayered = require './mixin-layered'
 

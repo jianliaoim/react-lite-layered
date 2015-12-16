@@ -3,7 +3,9 @@
 # compiled by JSX compiler and js2coffee
 # rewrite to remove jQuery dependency
 
-React = require("react/addons")
+React = require("react")
+ReactDOM = require("react-dom")
+ReactTransitionGroup = require('react-addons-transition-group')
 
 animationSupported = ->
   endEvents.length isnt 0
@@ -18,7 +20,6 @@ addClass = (node, x) ->
   classList = classList.concat [x]
   node.className = classList.join(' ')
 
-ReactTransitionGroup = React.addons.TransitionGroup
 TICK = 17
 EVENT_NAME_MAP =
   transitionend:
@@ -55,7 +56,7 @@ endEvents = []
 TimeoutTransitionGroupChild = React.createClass
   displayName: "TimeoutTransitionGroupChild"
   transition: (animationType, finishCallback) ->
-    node = @getDOMNode()
+    node = ReactDOM.findDOMNode @
     className = @props.name + "-" + animationType
     activeClassName = className + "-active"
     endListener = ->
@@ -86,7 +87,7 @@ TimeoutTransitionGroupChild = React.createClass
 
   flushClassNameQueue: ->
     if @isMounted()
-      addClass @getDOMNode(), @classNameQueue.join(" ")
+      addClass (ReactDOM.findDOMNode @), @classNameQueue.join(" ")
     @classNameQueue.length = 0
     @timeout = null
     return

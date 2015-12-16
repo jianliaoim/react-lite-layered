@@ -8,6 +8,8 @@ Demo http://ui.talk.ai/react-lite-layered/
 
 Inspired by http://stackoverflow.com/a/26789089/883571
 
+> Notice, `0.1.x` is using React `0.14.x`, while `0.0.x` was using React `0.13`.
+
 ### Properties
 
 This module contains 6 layered components. There are some **common properties**:
@@ -139,7 +141,7 @@ var App = React.createClass({
   },
 
   componentDidMount: function() {
-    this._areaEl = this.refs.area.getDOMNode()
+    this._areaEl = this.refs.area
   },
 
   getTriggerArea: function() {

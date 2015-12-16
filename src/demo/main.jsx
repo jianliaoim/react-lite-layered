@@ -1,5 +1,6 @@
 
 import React from 'react'
+import ReactDOM from 'react-dom'
 
 import {Dialog, Popover, Modal, Overlay, ReaderModal, FileModal} from '../index'
 
@@ -21,7 +22,7 @@ var App = React.createClass({
   },
 
   componentDidMount: function() {
-    this._areaEl = this.refs.area.getDOMNode()
+    this._areaEl = this.refs.area
   },
 
   getTriggerArea: function() {
@@ -170,4 +171,4 @@ var PageApp = React.createFactory(App)
 
 var demo = document.querySelector('.demo')
 
-React.render(PageApp(), demo)
+ReactDOM.render(PageApp(), demo)

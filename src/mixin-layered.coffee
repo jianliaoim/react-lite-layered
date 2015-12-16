@@ -2,7 +2,8 @@
 # Code mostly done at:
 # http://stackoverflow.com/a/26789089/883571
 
-React = require 'react/addons'
+React = require 'react'
+ReactDOM = require 'react-dom'
 # bowser = require 'bowser'
 
 div = React.createFactory 'div'
@@ -36,7 +37,7 @@ module.exports =
     document.body.appendChild @_target
     @bindWindowEvents?()
     tree = @renderLayer false
-    React.render tree, @_target
+    ReactDOM.render tree, @_target
 
     # use delay to create transition
     # more delay to fix in safari
@@ -46,7 +47,7 @@ module.exports =
 
   _renderChildren: ->
     tree = @renderLayer true
-    React.render tree, @_target
+    ReactDOM.render tree, @_target
 
   _unrenderLayer: ->
     React.unmountComponentAtNode @_target
