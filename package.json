@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "bowser": "^0.7.2",
-    "classnames": "^1.2.0",
+    "classnames": "^2.2.3",
     "keycode": "^2.0.0",
     "react": "^0.14.7",
     "react-addons-transition-group": "^0.14.7",
