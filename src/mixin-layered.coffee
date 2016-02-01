@@ -50,4 +50,4 @@ module.exports =
     ReactDOM.render tree, @_target
 
   _unrenderLayer: ->
-    React.unmountComponentAtNode @_target
+    ReactDOM.unmountComponentAtNode @_target
