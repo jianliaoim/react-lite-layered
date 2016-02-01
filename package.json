@@ -10,7 +10,7 @@
     "react": "^0.14.7",
     "react-addons-transition-group": "^0.14.7",
     "react-dom": "^0.14.7",
-    "volubile-ui": "0.1.1"
+    "volubile-ui": "^0.1.2"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.1.0",
